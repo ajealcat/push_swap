@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 11:08:38 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/08/10 13:51:54 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/09/22 17:16:51 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <string.h>
 
-int		ft_atoi(const char *str);
+uint64_t		ft_atoi(const char *str);
 int		ft_atoi_base(char *str, const char *base);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_isalpha(int c);
