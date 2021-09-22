@@ -6,26 +6,26 @@
 #    By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/15 09:56:00 by ajearuth          #+#    #+#              #
-#    Updated: 2021/09/16 09:42:39 by ajearuth         ###   ########.fr        #
+#    Updated: 2021/09/22 11:43:28 by ajearuth         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 BIN = push-swap
 
-SRCS = 
+SRCS = main.c
 SRCSD = srcs/
 bonus = \
 
 OBJSD = objs/
 
 LIBFT_PATH = libft/
-LIBFT_SRCS = 
+LIBFT_SRCS = ft_atoi.c
 LIBFT_OBJS = $(addprefix $(OBJSD), $(LIBFT_SRCS:.c=.o))
 OBJS = $(addprefix $(OBJSD), $(SRCS:.c=.o))
 OBJSBONUS = $(bonus:.c=.o)
 
 CC = gcc -c -o
-// LINKER = ar rcs
+LINKER = gcc -o
 FLAGS = -Wall -Wextra -Werror
 
 $(BIN):	$(OBJS) $(LIBFT_OBJS)
