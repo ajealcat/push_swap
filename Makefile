@@ -6,7 +6,7 @@
 #    By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/15 09:56:00 by ajearuth          #+#    #+#              #
-#    Updated: 2021/09/22 11:43:28 by ajearuth         ###   ########.fr        #
+#    Updated: 2021/09/22 13:40:27 by ajearuth         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ bonus = \
 OBJSD = objs/
 
 LIBFT_PATH = libft/
-LIBFT_SRCS = ft_atoi.c
+LIBFT_SRCS = ft_atoi.c ft_putstr_fd.c ft_strlen.c ft_isdigit.c
 LIBFT_OBJS = $(addprefix $(OBJSD), $(LIBFT_SRCS:.c=.o))
 OBJS = $(addprefix $(OBJSD), $(SRCS:.c=.o))
 OBJSBONUS = $(bonus:.c=.o)
