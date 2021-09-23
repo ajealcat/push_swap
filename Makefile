@@ -6,11 +6,11 @@
 #    By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/15 09:56:00 by ajearuth          #+#    #+#              #
-#    Updated: 2021/09/22 17:45:21 by ajearuth         ###   ########.fr        #
+#    Updated: 2021/09/23 16:52:15 by ajearuth         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-BIN = push-swap
+BIN = push_swap
 
 SRCS = main.c
 SRCSD = srcs/

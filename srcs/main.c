@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/09/23 16:46:32 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/09/23 17:10:51 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ int		ft_check_double(int ac, int tab_a[])
 	return (0);
 }
 
-int		ft_create_tab_a(int ac, char **av, int tab_a[])
+int		ft_check_arg(int ac, char **av)
 {
 	int i;
 	int j;
-	
+
 	i = 1;
 	while (i != ac)
 	{
@@ -50,6 +50,14 @@ int		ft_create_tab_a(int ac, char **av, int tab_a[])
 		}
 	++i;
 	}
+	return (0);
+}
+
+int		ft_create_tab_a(int ac, char **av, int tab_a[])
+{
+	int i;
+	int j;
+	
 	i = 1;
 	j = 0;
 	while (i != ac)
@@ -76,7 +84,7 @@ int		main(int ac, char **av)
 	j = 0;
 	if (ac > 1)
 	{
-		if (ft_create_tab_a(ac, av, tab_a) == 1)
+		if (ft_create_tab_a(ac, av, tab_a) == 1 || ft_check_arg(ac, av) == 1)
 		{
 			ft_putstr_fd("Error\n", 2);
 			return (0);
