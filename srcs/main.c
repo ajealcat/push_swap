@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/09/22 18:23:35 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/09/23 14:17:51 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,24 @@ int		ft_create_tab_a(int ac, char **av, int tab_a[])
 	int j;
 	
 	i = 1;
-	j = 0;
 	while (i != ac)
 	{
-		if (av[i][j] == '-')
-			++j;
+		j = 0;
 		while (av[i][j])
 		{
-			if (ft_isdigit(av[i][j] == 0))
+			if (av[i][j] == '-')
+				++j;
+			while (ft_isdigit(av[i][j]) == 0)
 				return (1);
-			++j;
+		++j;
 		}
-		++i;
+	++i;
 	}
 	i = 1;
 	j = 0;
 	while (i != ac)
 	{
-		if (ft_atoi(av[i]) > 2147483647)
+		if (ft_atoi(av[i]) > 2147483647 || ft_atoi(av[i]) < -2147483648)
 			return (1);
 		else 
 		{
