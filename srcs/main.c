@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/09/23 14:17:51 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/09/23 15:40:46 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		ft_create_tab_a(int ac, char **av, int tab_a[])
 		j = 0;
 		while (av[i][j])
 		{
-			if (av[i][j] == '-')
+			if (av[i][j] == '-' && ft_isalnum(av[i][j - 1]) == 0)
 				++j;
 			while (ft_isdigit(av[i][j]) == 0)
 				return (1);
