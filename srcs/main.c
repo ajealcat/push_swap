@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/09/23 15:40:46 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/09/23 16:46:32 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		ft_check_double(int ac, int tab_a[])
 		comp_i = i + 1;
 		while (tab_a[i] != tab_a[comp_i] && comp_i < ac - 1)
 			++comp_i;
-		if (tab_a[i] == tab_a[comp_i])
+		if (tab_a[i] == tab_a[comp_i] && comp_i < ac - 1)
 			return (1);
 		++i;
 	}
