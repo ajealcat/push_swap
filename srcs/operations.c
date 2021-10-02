@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 17:34:05 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/09/29 12:48:07 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/10/02 17:22:06 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,15 @@ void	ss(int *tab_a, int *tab_b)
 
 void	pa(int *tab_a, int *tab_b)
 {
+	int i;
+
+	i = 0;
 	if (tab_b[0])
 	{
+		while (tab_a[i])
+		{
+			tab_a[i] 
+		}
 		tab_b[0] = tab_a[0];
 
 	}	
