@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/09/28 11:28:39 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/09/29 12:48:09 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		ft_check_arg(int ac, char **av)
 	return (0);
 }
 
-int		ft_fill_tab_a(int ac, char **av, int tab_a[])
+int		ft_fill_tab_a(int ac, char **av, int *tab_a)
 {
 	int i;
 	int j;
@@ -74,6 +74,19 @@ int		ft_fill_tab_a(int ac, char **av, int tab_a[])
 	return (0);
 }
 
+int		*ft_fill_tab_b(int ac, int *tab_b)
+{
+	int i;
+
+	i = 0; 
+	while (ac != i)
+	{
+		tab_b[i] = '\0';
+		++i;
+	}
+	return (tab_b);
+}
+
 int		main(int ac, char **av)
 {
 	int *tab_a;
@@ -87,9 +100,9 @@ int		main(int ac, char **av)
 	if (tab_a == NULL)
 		return (0);
 	tab_b = malloc(sizeof(int) * (ac - 1));
-	if (tab_b = NULL)
+	if (tab_b == NULL)
 		return (0);
-	tab_b = 
+	tab_b = ft_fill_tab_b(ac, tab_b);
 	if (ac > 1)
 	{
 		if (ft_fill_tab_a(ac, av, tab_a) == 1 || ft_check_arg(ac, av) == 1)

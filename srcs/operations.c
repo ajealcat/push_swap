@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 17:34:05 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/09/28 11:28:42 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/09/29 12:48:07 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	sa(int *tab_a)
 		write(1, "sa\n", 3);
 	}
 }
-/*
+
 void	sb(int *tab_b)
 {
 	int keep;
@@ -33,8 +33,8 @@ void	sb(int *tab_b)
 	{
 		keep = tab_b[0];
 		tab_b[0] = tab_b[1];
-		tab_a[1] = keep;
-		write(1, "sb\n" 3);
+		tab_b[1] = keep;
+		write(1, "sb\n", 3);
 	}
 }
 
@@ -55,8 +55,12 @@ void	ss(int *tab_a, int *tab_b)
 	}
 }
 
-void	pa(int	*tab_a, int *tab_b)
+void	pa(int *tab_a, int *tab_b)
 {
-	
+	if (tab_b[0])
+	{
+		tab_b[0] = tab_a[0];
+
+	}	
 }
-*/
+
