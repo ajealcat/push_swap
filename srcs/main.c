@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/10/02 17:22:09 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/10/05 19:16:35 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,10 @@ int		main(int ac, char **av)
 {
 	int *tab_a;
 	int *tab_b;
-	int i;
+//	int i;
 	int j;
 
-	i = 1;
+//	i = 1;
 	j = 0;
 	tab_a = malloc(sizeof(int) * (ac - 1));
 	if (tab_a == NULL)
@@ -116,11 +116,25 @@ int		main(int ac, char **av)
 			return (0);
 		}
 	}
-	sa(tab_a);
+	pb(tab_a, tab_b);
+	pb(tab_a, tab_b);
+	pb(tab_a, tab_b);
+	pb(tab_a, tab_b);
+	sb(tab_b);
+	pa(tab_a, tab_b);
+	pa(tab_a, tab_b);
+	pa(tab_a, tab_b);
+	pa(tab_a, tab_b);
 	j = 0;
 	while (j < ac - 1)
 	{
-		printf("%d\n", tab_a[j]);
+		printf("tab a = %d\n", tab_a[j]);
+		++j;
+	}
+	j = 0;
+	while (j < ac - 1)
+	{
+		printf("tab b = %d\n", tab_b[j]);
 		++j;
 	}
 	return (0);
