@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 17:34:05 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/10/05 19:14:16 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/10/10 16:35:49 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,45 +57,45 @@ void	ss(int *tab_a, int *tab_b)
 
 void	pa(int *tab_a, int *tab_b)
 {
-	int j;
+	int i;
 
-	j = 0;
+	i = 0;
 	if (tab_b[0])
 	{
-		while (tab_a[j])
+		while (tab_a[i])
 		{
-			tab_a[j] = tab_a[j + 1];
-			++j;
+			tab_a[i + 1] = tab_a[i];
+			++i;
 		}
 		tab_a[0] = tab_b[0];
-		j = 0;
-		while (tab_b[j])
+		i = 0;
+		while (tab_b[i + 1])
 		{
-			tab_b[j] = tab_b[j + 1];
-			++j;
+			tab_b[i] = tab_b[i + 1];
+			++i;
 		}
-		write(1, "pa\n", 3);
+	write(1, "pa\n", 3);
 	}
 }
 
 void	pb(int *tab_a, int *tab_b)
 {
-	int j;
+	int i;
 
-	j = 0;
+	i = 0;
 	if (tab_a[0])
 	{
-		while (tab_b[j])
+		while (tab_b[i])
 		{
-			tab_b[j] = tab_b[j + 1];
-			++j;
+			tab_b[i + 1] = tab_b[i];
+			++i;
 		}
 		tab_b[0] = tab_a[0];
-		j = 0;
-		while (tab_a[j])
+		i = 0;
+		while (tab_a[i + 1])
 		{
-			tab_a[j] = tab_a[j + 1];
-			++j;
+			tab_a[i] = tab_a[i + 1];
+			++i;
 		}
 		write(1, "pb\n", 3);
 	}

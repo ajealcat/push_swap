@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/10/05 19:16:35 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/10/06 12:28:18 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,11 +118,7 @@ int		main(int ac, char **av)
 	}
 	pb(tab_a, tab_b);
 	pb(tab_a, tab_b);
-	pb(tab_a, tab_b);
-	pb(tab_a, tab_b);
 	sb(tab_b);
-	pa(tab_a, tab_b);
-	pa(tab_a, tab_b);
 	pa(tab_a, tab_b);
 	pa(tab_a, tab_b);
 	j = 0;
