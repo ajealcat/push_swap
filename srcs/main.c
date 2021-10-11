@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/10/06 12:28:18 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/10/11 19:15:46 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,38 +91,70 @@ int		main(int ac, char **av)
 {
 	int *tab_a;
 	int *tab_b;
-//	int i;
+	int len_a;
+	int len_b;
 	int j;
 
-//	i = 1;
 	j = 0;
-	tab_a = malloc(sizeof(int) * (ac - 1));
+	len_a = ac - 1;
+	len_b = 0;
+	tab_a = malloc(sizeof(int) * ac);
 	if (tab_a == NULL)
 		return (0);
-	tab_b = malloc(sizeof(int) * (ac - 1));
+	tab_b = malloc(sizeof(int) * ac);
 	if (tab_b == NULL)
+	{
+		free(tab_a);
 		return (0);
+	}
 	tab_b = ft_fill_tab_b(ac, tab_b);
 	if (ac > 1)
 	{
 		if (ft_fill_tab_a(ac, av, tab_a) == 1 || ft_check_arg(ac, av) == 1)
 		{
 			ft_putstr_fd("Error\n", 2);
+			free(tab_a);
+			free(tab_b);
 			return (0);
 		}
 		if (ft_check_double(ac, tab_a) == 1)
 		{
 			ft_putstr_fd("Error\n", 2);
+			free(tab_a);
+			free(tab_b);
 			return (0);
 		}
 	}
-	pb(tab_a, tab_b);
-	pb(tab_a, tab_b);
+	pb(tab_a, tab_b, len_a, len_b);
+	len_a--;
+	len_b++;
+	pb(tab_a, tab_b, len_a, len_b);
+	len_a--;
+	len_b++;
+	pb(tab_a, tab_b, len_a, len_b);
+	len_a--;
+	len_b++;
+	pb(tab_a, tab_b, len_a, len_b);
+	len_a--;
+	len_b++;
 	sb(tab_b);
-	pa(tab_a, tab_b);
-	pa(tab_a, tab_b);
+	pa(tab_a, tab_b, len_a, len_b);
+	len_a++;
+	len_b--;
+	pa(tab_a, tab_b, len_a, len_b);
+	len_a++;
+	len_b--;
+	pa(tab_a, tab_b, len_a, len_b);
+	len_a++;
+	len_b--;
+	pa(tab_a, tab_b, len_a, len_b);
+	len_a++;
+	len_b--;
+	pa(tab_a, tab_b, len_a, len_b);
+	len_a++;
+	len_b--;
 	j = 0;
-	while (j < ac - 1)
+		while (j < ac - 1)
 	{
 		printf("tab a = %d\n", tab_a[j]);
 		++j;
@@ -133,5 +165,8 @@ int		main(int ac, char **av)
 		printf("tab b = %d\n", tab_b[j]);
 		++j;
 	}
+
+	free(tab_a);
+	free(tab_b);
 	return (0);
 }
