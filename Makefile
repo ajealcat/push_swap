@@ -6,13 +6,13 @@
 #    By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/15 09:56:00 by ajearuth          #+#    #+#              #
-#    Updated: 2021/09/28 11:02:51 by ajearuth         ###   ########.fr        #
+#    Updated: 2021/10/12 13:09:41 by ajearuth         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 BIN = push_swap
 
-SRCS = main.c operations.c
+SRCS = main.c operations.c operations_r.c operations_rr.c
 SRCSD = srcs/
 bonus = \
 
