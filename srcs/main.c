@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/10/12 13:15:16 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/10/19 18:51:16 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,16 +125,16 @@ int		main(int ac, char **av)
 			return (0);
 		}
 	}
-	pb(tab_a, tab_b, len_a, len_b);
-	len_a--;
-	len_b++;
-	pb(tab_a, tab_b, len_a, len_b);
-	len_a--;
-	len_b++;
-	pb(tab_a, tab_b, len_a, len_b);
-	len_a--;
-	len_b++;
 /*	pb(tab_a, tab_b, len_a, len_b);
+	len_a--;
+	len_b++;
+	pb(tab_a, tab_b, len_a, len_b);
+	len_a--;
+	len_b++;
+	pb(tab_a, tab_b, len_a, len_b);
+	len_a--;
+	len_b++;
+	pb(tab_a, tab_b, len_a, len_b);
 	len_a--;
 	len_b++;
 	sb(tab_b);
@@ -153,7 +153,7 @@ int		main(int ac, char **av)
 	pa(tab_a, tab_b, len_a, len_b);
 	len_a++;
 	len_b--;
-*/	
+	
 	rrr(tab_a, len_a, tab_b, len_b);
 	j = 0;
 		while (j < ac - 1)
@@ -167,7 +167,8 @@ int		main(int ac, char **av)
 		printf("tab b = %d\n", tab_b[j]);
 		++j;
 	}
-
+*/
+	printf("%d\n", find_mediane(tab_a, len_a));
 	free(tab_a);
 	free(tab_b);
 	return (0);
