@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 11:27:49 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/10/12 13:15:31 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/10/19 18:42:15 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,8 @@ void rb(int *tab_b, int len_b);
 void rr(int *tab_a, int len_a, int *tab_b, int len_b);
 void rra(int *tab_a, int len_a);
 void rrr(int *tab_a, int len_a, int *tab_b, int len_b);
+int *create_tmp(int *tab_a, int len_a);
+int find_mediane(int *tab_a, int len_a);
+
 
 #endif
