@@ -6,11 +6,12 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:18:15 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/03 14:58:06 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/03 16:24:31 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 int	in_order(int *tab, int len)
 {
@@ -37,27 +38,39 @@ int	quick_sort_a(int *tab_a, int *tab_b, int len_a, int len_b)
 
 	i = 0;
 	mediane = find_mediane(tab_a, len_a);
+	printf("mediane : %d\n", mediane);
+	if(in_order(tab_a, len_a) == 0)
+		return (0);
+	else if (len_a == 2)
+	{
+		sa(tab_a);
+//		return (0);
+	}
 	while(len_a > i)
 	{
-		j = i + 1;
-		if(in_order(tab_a, len_a) == 0)
-			return (0);
-		else if (len_a == 2)
+		if (tab_a[0] <= mediane)
 		{
-			sa(tab_a);
-			return (0);
+			ra(tab_a, len_a);
+			++i;
 		}
 		else
 		{
-			if (tab_a[i] <= mediane)
-				ra(tab_a, len_a);
-			else
-			{
-				pb(tab_a, tab_b, len_a, len_b);
-				++len_b; 
-			}
+			pb(tab_a, tab_b, len_a, len_b);
+			++len_b;
+			--len_a;
 		}
-		++i;
+	}
+	j = 0;
+	while(j < len_a)
+	{
+		printf("tab a : %d\n", tab_a[j]);
+		j++;
+	}
+	j = 0;
+	while(j < len_b)
+	{
+		printf("tab b : %d\n", tab_b[j]);
+		j++;
 	}
 	return (quick_sort_a(tab_a, tab_b, len_a, len_b) 
 		&& quick_sort_b(tab_a, tab_b, len_a, len_b));
@@ -67,30 +80,37 @@ int	quick_sort_b(int *tab_a, int *tab_b, int len_a, int len_b)
 {
 	int mediane;
 	int i;
-	int j;
 
 	i = 0;
 	mediane = find_mediane(tab_b, len_b);
+	if (len_b == 2 && in_order(tab_b, len_b) != 0)
+		sb(tab_b);
+	if (in_order(tab_b, len_b) == 0)
+	{
+		while(i < len_b)
+		{
+			pa(tab_a, tab_b, len_a, len_b);
+			ra(tab_a, len_a);
+			--len_b;
+			++len_a;
+			return (0);
+		}
+	}
 	while(len_b > i)
 	{
-		j = i + 1;
-		if(in_order(tab_b, len_b) == 0)
-			return (0);
-		else if (len_b == 2)
+		if (tab_b[0] >= mediane)
 		{
-			sb(tab_b);
-			return (0);
+			rb(tab_b, len_b);
+			++i;
 		}
 		else
-		if (tab_b[i] >= mediane)
-				rb(tab_b, len_b);
-			else
-			{
-				pa(tab_a, tab_b, len_a, len_b);
-				ra(tab_a, len_a);
-				++len_b; 
-			}
+		{
+			pa(tab_a, tab_b, len_a, len_b);
+			ra(tab_a, len_a);
+			--len_b;
+			++len_a;
 		}
-		++i;
-	return(0);
+	}
+	return(quick_sort_a(tab_a, tab_b, len_a, len_b) 
+		&& quick_sort_b(tab_a, tab_b, len_a, len_b));
 }

@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/10/19 18:51:16 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/03 15:50:05 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,9 +93,7 @@ int		main(int ac, char **av)
 	int *tab_b;
 	int len_a;
 	int len_b;
-	int j;
 
-	j = 0;
 	len_a = ac - 1;
 	len_b = 0;
 	tab_a = malloc(sizeof(int) * ac);
@@ -125,50 +123,7 @@ int		main(int ac, char **av)
 			return (0);
 		}
 	}
-/*	pb(tab_a, tab_b, len_a, len_b);
-	len_a--;
-	len_b++;
-	pb(tab_a, tab_b, len_a, len_b);
-	len_a--;
-	len_b++;
-	pb(tab_a, tab_b, len_a, len_b);
-	len_a--;
-	len_b++;
-	pb(tab_a, tab_b, len_a, len_b);
-	len_a--;
-	len_b++;
-	sb(tab_b);
-	pa(tab_a, tab_b, len_a, len_b);
-	len_a++;
-	len_b--;
-	pa(tab_a, tab_b, len_a, len_b);
-	len_a++;
-	len_b--;
-	pa(tab_a, tab_b, len_a, len_b);
-	len_a++;
-	len_b--;
-	pa(tab_a, tab_b, len_a, len_b);
-	len_a++;
-	len_b--;
-	pa(tab_a, tab_b, len_a, len_b);
-	len_a++;
-	len_b--;
-	
-	rrr(tab_a, len_a, tab_b, len_b);
-	j = 0;
-		while (j < ac - 1)
-	{
-		printf("tab a = %d\n", tab_a[j]);
-		++j;
-	}
-	j = 0;
-	while (j < ac - 1)
-	{
-		printf("tab b = %d\n", tab_b[j]);
-		++j;
-	}
-*/
-	printf("%d\n", find_mediane(tab_a, len_a));
+	quick_sort_a(tab_a, tab_b, len_a, len_b);
 	free(tab_a);
 	free(tab_b);
 	return (0);
