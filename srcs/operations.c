@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 17:34:05 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/04 13:53:16 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/04 19:18:09 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ss(int *tab_a, int *tab_b)
 	}
 }
 
-void	pa(int *tab_a, int *tab_b, int len_a, int len_b)
+void	pa(int *tab_a, int *tab_b, int *len_a, int *len_b)
 {
 	int i;
 	int keep;
@@ -57,9 +57,9 @@ void	pa(int *tab_a, int *tab_b, int len_a, int len_b)
 
 	i = 0;
 	keep = tab_a[0];
-	if (len_b == 0)
+	if (*len_b == 0)
 		return ;
-	while(i < len_a)
+	while(i < *len_a)
 	{ 
 		tmp = tab_a[i + 1];
 		tab_a[i + 1] = keep;
@@ -68,15 +68,17 @@ void	pa(int *tab_a, int *tab_b, int len_a, int len_b)
 	}
 	tab_a[0] = tab_b[0];
 	i = 0;
-	while(i < len_b)
+	while(i < *len_b)
 	{
 		tab_b[i] = tab_b[i + 1];
 		++i;
 	}
+	++*len_a;
+	--*len_b;
 	write(1, "pa\n", 3);
 }
 
-void	pb(int *tab_a, int *tab_b, int len_a, int len_b)
+void	pb(int *tab_a, int *tab_b, int *len_a, int *len_b)
 {
 	int i;
 	int keep;
@@ -84,9 +86,9 @@ void	pb(int *tab_a, int *tab_b, int len_a, int len_b)
 
 	i = 0;
 	keep = tab_b[0];
-	if (len_a == 0)
+	if (*len_a == 0)
 		return ;
-	while (i < len_b)
+	while (i < *len_b)
 	{
 		tmp = tab_b[i + 1];
 		tab_b[i + 1] = keep;
@@ -95,10 +97,12 @@ void	pb(int *tab_a, int *tab_b, int len_a, int len_b)
 	}
 	tab_b[0] = tab_a[0];
 	i = 0;
-	while (i < len_a)	
+	while (i < *len_a)	
 	{
 		tab_a[i] = tab_a[i + 1];
 		++i;
 	}
+	++*len_b;
+	--*len_a;
 	write(1, "pb\n", 3);
 }

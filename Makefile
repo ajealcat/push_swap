@@ -6,7 +6,7 @@
 #    By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/15 09:56:00 by ajearuth          #+#    #+#              #
-#    Updated: 2021/10/19 18:51:12 by ajearuth         ###   ########.fr        #
+#    Updated: 2021/11/04 19:19:48 by ajearuth         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ OBJSBONUS = $(bonus:.c=.o)
 
 CC = gcc -c -o
 LINKER = gcc -o
-FLAGS = -Wall -Wextra #-Werror
+FLAGS = -Wall -Wextra -Werror
 
 $(BIN):	$(OBJS) $(LIBFT_OBJS)
 	$(LINKER) $@ $(OBJS) $(LIBFT_OBJS)

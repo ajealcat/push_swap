@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:18:15 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/04 14:23:29 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/04 19:23:54 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ int	in_order(int *tab, int len)
 	int i;
 
 	i = 0;
+	if (len <= 1)
+	{
+		return(1);
+	}
 	while(i + 1 < len)
 	{
 		if(tab[i] < tab[i + 1])
@@ -28,20 +32,46 @@ int	in_order(int *tab, int len)
 	return(1);
 }
 
+/*void	print_stack_a(int *tab, int len)
+{
+	int i;
+
+	i = 0;
+	while(i < len)
+	{
+		printf("tableau a = %d\n", tab[i]);
+		++i;
+	}
+}
+
+void	print_stack_b(int *tab, int len)
+{
+	int i;
+
+	i = 0;
+	while(i < len)
+	{
+		printf("tableau b = %d\n", tab[i]);
+		++i;
+	}
+}
+*/
 int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 {
 	int mediane;
 	int i;
 
 	i = 0;
-	mediane = find_mediane(tab_a, *len_a);
-	if(in_order(tab_a, *len_a) == 1)
-		return (1);
+//	print_stack_a(tab_a, *len_a);
+//	print_stack_b(tab_b, *len_b);
+	if(*len_a == 0 || in_order(tab_a, *len_a) == 1)
+		return (0);
 	else if (*len_a == 2)
 	{
 		sa(tab_a);
-		return (1);
+		return (0);
 	}
+	mediane = find_mediane(tab_a, *len_a);
 	while(*len_a > i)
 	{
 		if (tab_a[0] <= mediane)
@@ -50,15 +80,13 @@ int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 			++i;
 		}
 		else
-		{
-			pb(tab_a, tab_b, *len_a, *len_b);
-			++*len_b;
-			--*len_a;
-		}
+			pb(tab_a, tab_b, len_a, len_b);
 	}
-	return (quick_sort_a(tab_a, tab_b, len_a, len_b)
-	&& quick_sort_b(tab_a, tab_b, len_a, len_b));
+	quick_sort_a(tab_a, tab_b, len_a, len_b); 
+	quick_sort_b(tab_a, tab_b, len_a, len_b);
+	return (0);
 }
+
 
 int	quick_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b)
 {
@@ -66,20 +94,22 @@ int	quick_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b)
 	int i;
 
 	i = 0;
-	mediane = find_mediane(tab_b, *len_b);
+//	print_stack_a(tab_a, *len_a);
+//	print_stack_b(tab_b, *len_b);
+	if (*len_b == 0)
+		return (0);
 	if (*len_b == 2 && in_order(tab_b, *len_b) != 1)
 		sb(tab_b);
 	if (in_order(tab_b, *len_b) == 1)
 	{
 		while(i < *len_b)
 		{
-			pa(tab_a, tab_b, *len_a, *len_b);
+			pa(tab_a, tab_b, len_a, len_b);
 			ra(tab_a, *len_a);
-			--*len_b;
-			++*len_a;
 		}
-		return(1);
+		return(0);
 	}
+	mediane = find_mediane(tab_b, *len_b);
 	while(*len_b > i)
 	{
 		if (tab_b[0] >= mediane)
@@ -89,12 +119,11 @@ int	quick_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b)
 		}
 		else
 		{
-			pa(tab_a, tab_b, *len_a, *len_b);
+			pa(tab_a, tab_b, len_a, len_b);
 			ra(tab_a, *len_a);
-			--*len_b;
-			++*len_a;
 		}
 	}
-	return(quick_sort_a(tab_a, tab_b, len_a, len_b) 
-		&& quick_sort_b(tab_a, tab_b, len_a, len_b));
+	quick_sort_a(tab_a, tab_b, len_a, len_b); 
+	quick_sort_b(tab_a, tab_b, len_a, len_b);
+	return(0);
 }

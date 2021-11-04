@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 11:27:49 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/04 14:18:45 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/04 19:18:50 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 int	main(int ac, char **av);
 void sa(int *tab_a);
 void sb(int *tab_b);
-void pa(int *tab_a, int *tab_b, int len_a, int len_b);
-void pb(int *tab_a, int *tab_b, int len_a, int len_b);
+void pa(int *tab_a, int *tab_b, int *len_a, int *len_b);
+void pb(int *tab_a, int *tab_b, int *len_a, int *len_b);
 void ra(int *tab_a, int len_a);
 void rb(int *tab_b, int len_b);
 void rr(int *tab_a, int len_a, int *tab_b, int len_b);
