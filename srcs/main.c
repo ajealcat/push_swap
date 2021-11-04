@@ -6,14 +6,14 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/03 15:50:05 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/04 14:22:06 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-int		ft_check_double(int ac, int tab_a[])
+int		ft_check_double(int ac, int *tab_a)
 {
 	int i;
 	int comp_i;
@@ -91,11 +91,17 @@ int		main(int ac, char **av)
 {
 	int *tab_a;
 	int *tab_b;
-	int len_a;
-	int len_b;
+	int *len_a;
+	int *len_b;
 
-	len_a = ac - 1;
-	len_b = 0;
+	len_a = malloc(sizeof(int) * 1);
+	if (len_a == NULL)
+		return (0);
+	len_a[0] = ac - 1;
+	len_b = malloc(sizeof(int) * 1);
+	if (len_b == NULL)
+		return (0);
+	len_b[0] = 0;
 	tab_a = malloc(sizeof(int) * ac);
 	if (tab_a == NULL)
 		return (0);

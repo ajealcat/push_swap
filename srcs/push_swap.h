@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 11:27:49 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/03 14:58:10 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/04 14:18:45 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void rrr(int *tab_a, int len_a, int *tab_b, int len_b);
 int *create_tmp(int *tab_a, int len_a);
 int find_mediane(int *tab_a, int len_a);
 int in_order(int *tab, int len);
-int quick_sort_a(int *tab_a, int *tab_b, int len_a, int len_b);
-int	quick_sort_b(int *tab_a, int *tab_b, int len_a, int len_b);
+int quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b);
+int	quick_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b);
 
 #endif
