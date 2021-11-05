@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/04 19:21:02 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/05 17:32:40 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,8 @@ int		main(int ac, char **av)
 			ft_putstr_fd("Error\n", 2);
 			free(tab_a);
 			free(tab_b);
+			free(len_a);
+			free(len_b);
 			return (0);
 		}
 		if (ft_check_double(ac, tab_a) == 1)
@@ -126,6 +128,8 @@ int		main(int ac, char **av)
 			ft_putstr_fd("Error\n", 2);
 			free(tab_a);
 			free(tab_b);
+			free(len_a);
+			free(len_b);
 			return (0);
 		}
 	}

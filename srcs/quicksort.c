@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:18:15 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/04 19:23:54 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/05 18:16:54 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	in_order(int *tab, int len)
 	return(1);
 }
 
-/*void	print_stack_a(int *tab, int len)
+void	print_stack_a(int *tab, int len)
 {
 	int i;
 
@@ -55,6 +55,12 @@ void	print_stack_b(int *tab, int len)
 		++i;
 	}
 }
+
+/*
+int	opti(int *tab, int len)
+{
+
+}
 */
 int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 {
@@ -62,8 +68,8 @@ int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 	int i;
 
 	i = 0;
-//	print_stack_a(tab_a, *len_a);
-//	print_stack_b(tab_b, *len_b);
+	print_stack_a(tab_a, *len_a);
+	print_stack_b(tab_b, *len_b);
 	if(*len_a == 0 || in_order(tab_a, *len_a) == 1)
 		return (0);
 	else if (*len_a == 2)
@@ -94,8 +100,8 @@ int	quick_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b)
 	int i;
 
 	i = 0;
-//	print_stack_a(tab_a, *len_a);
-//	print_stack_b(tab_b, *len_b);
+	print_stack_a(tab_a, *len_a);
+	print_stack_b(tab_b, *len_b);
 	if (*len_b == 0)
 		return (0);
 	if (*len_b == 2 && in_order(tab_b, *len_b) != 1)
