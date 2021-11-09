@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:18:15 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/05 18:16:54 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/08 16:12:53 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,6 @@ void	print_stack_b(int *tab, int len)
 	}
 }
 
-/*
-int	opti(int *tab, int len)
-{
-
-}
-*/
 int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 {
 	int mediane;
@@ -86,7 +80,9 @@ int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 			++i;
 		}
 		else
+		{
 			pb(tab_a, tab_b, len_a, len_b);
+		}
 	}
 	quick_sort_a(tab_a, tab_b, len_a, len_b); 
 	quick_sort_b(tab_a, tab_b, len_a, len_b);
