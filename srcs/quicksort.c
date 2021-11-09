@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:18:15 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/08 16:12:53 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:38:33 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,20 @@ void	print_stack_b(int *tab, int len)
 	}
 }
 
+int	is_shortest(int *tab, int len)
+{
+	int i;
+
+	i = 1;
+	while (i < len)
+	{
+		if (tab[0] > tab[i])
+			return (1);
+		++i;
+	}
+	return (0);
+}
+
 int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 {
 	int mediane;
@@ -74,8 +88,16 @@ int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 	mediane = find_mediane(tab_a, *len_a);
 	while(*len_a > i)
 	{
-		if (tab_a[0] <= mediane)
+		if (tab_a[0] <= mediane && is_shortest(tab_a, *len_a) == 0)
 		{
+			ra(tab_a, *len_a);
+			++i;
+		}
+		else if (tab_a[0] <= mediane && tab_a[0] > tab_a[1])
+		{
+			sa(tab_a);
+			ra(tab_a, *len_a);
+			++i;
 			ra(tab_a, *len_a);
 			++i;
 		}
@@ -94,6 +116,7 @@ int	quick_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b)
 {
 	int mediane;
 	int i;
+	int j;
 
 	i = 0;
 	print_stack_a(tab_a, *len_a);
@@ -112,19 +135,33 @@ int	quick_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b)
 		return(0);
 	}
 	mediane = find_mediane(tab_b, *len_b);
+	j = 1;
 	while(*len_b > i)
 	{
-		if (tab_b[0] >= mediane)
+		if (tab_b[0] > mediane)
 		{
 			rb(tab_b, *len_b);
 			++i;
 		}
-		else
+		if (tab_b[0] <= mediane)
+		{
+			if (is_shortest(tab_b, *len_b) == 0)
+			{
+				pa(tab_a, tab_b, len_a, len_b);
+				ra(tab_a, *len_a);
+			}
+			else
+			{
+				rb(tab_b, *len_b);
+				++i;
+			}
+		}
+/*		else
 		{
 			pa(tab_a, tab_b, len_a, len_b);
 			ra(tab_a, *len_a);
 		}
-	}
+*/	}
 	quick_sort_a(tab_a, tab_b, len_a, len_b); 
 	quick_sort_b(tab_a, tab_b, len_a, len_b);
 	return(0);
