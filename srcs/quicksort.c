@@ -6,46 +6,12 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:18:15 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/10 11:24:48 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/10 12:19:29 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
-
-int	in_order(int *tab, int len)
-{
-	int i;
-
-	i = 0;
-	if (len <= 1)
-		return (1);
-	while (i + 1 < len)
-	{
-		if (tab[i] < tab[i + 1])
-			++i;
-		else 
-			return (0);
-	}
-	return (1);
-}
-
-int decrease(int *tab, int len)
-{
-	int i;
-
-	i = 0;
-	if (len <= 1)
-		return (1);
-	while (i + 1 < len)
-	{
-		if (tab[i] > tab[i + 1])
-			++i;
-		else
-			return (0);
-	}
-	return (1);
-}
 
 /*
 void	print_stack_a(int *tab, int len)
@@ -167,6 +133,7 @@ int	quick_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b)
 				++i;
 			}
 		}
+	}
 	quick_sort_a(tab_a, tab_b, len_a, len_b); 
 	quick_sort_b(tab_a, tab_b, len_a, len_b);
 	return (0);
