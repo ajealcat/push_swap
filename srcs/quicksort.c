@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:18:15 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/10 16:05:38 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/10 17:50:58 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,9 @@ int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 		return (0);
 	}
 	mediane = find_mediane(tab_a, *len_a);
-	while(*len_a > i)
+	while(*len_a  > i)
 	{
-		if (tab_a[0] >= mediane && tab_a[0] > tab_a[1])
-		{
-			ra(tab_a, *len_a);
-			++i;
-		}
-		else if (tab_a[0] > mediane)
+		if (tab_a[0] > mediane)
 		{
 			ra(tab_a, *len_a);
 			++i;
@@ -74,9 +69,9 @@ int	quick_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b)
 		sb(tab_b);
 	if (decrease(tab_b, *len_b) == 1)
 	{
-		while(i < *len_b)
+		while (i < *len_b)
 			pa(tab_a, tab_b, len_a, len_b);
-		return(0);
+		return (0);
 	}
 	while (*len_b)
 	{
