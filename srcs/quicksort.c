@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:18:15 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/10 12:43:55 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/10 16:05:38 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,18 +48,13 @@ int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 			ra(tab_a, *len_a);
 			++i;
 		}
-		else if (tab_a[0] >= mediane && tab_a[0] < tab_a[1])
+		else if (tab_a[0] > mediane)
 		{
-			sa(tab_a);
-			ra(tab_a, *len_a);
-			++i;
 			ra(tab_a, *len_a);
 			++i;
 		}
 		else
-		{
 			pb(tab_a, tab_b, len_a, len_b);
-		}
 	}
 	quick_sort_a(tab_a, tab_b, len_a, len_b); 
 	quick_sort_b(tab_a, tab_b, len_a, len_b);
@@ -69,9 +64,8 @@ int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 
 int	quick_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b)
 {
-	int mediane;
 	int i;
-	int j;
+	int biggest;
 
 	i = 0;
 	if (*len_b == 0)
@@ -84,24 +78,27 @@ int	quick_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b)
 			pa(tab_a, tab_b, len_a, len_b);
 		return(0);
 	}
-	mediane = find_mediane(tab_b, *len_b);
-	j = 1;
-	while(*len_b > i)
+	while (*len_b)
 	{
-		if (tab_b[0] < mediane)
+		biggest = search_biggest(tab_b, *len_b); 
+		if(biggest <= *len_b / 2)
 		{
-			rb(tab_b, *len_b);
-			++i;
-		}
-		if (tab_b[0] >= mediane)
-		{
-			if (is_biggest(tab_b, *len_b) == 0)
-				pa(tab_a, tab_b, len_a, len_b);
-			else
+			while(biggest)
 			{
 				rb(tab_b, *len_b);
-				++i;
+				--biggest;
 			}
+			pa(tab_a, tab_b, len_a, len_b);
+		}
+		else if(biggest > *len_b / 2)
+		{
+			biggest = *len_b - biggest;
+			while(biggest)
+			{
+				rrb(tab_b, *len_b);
+				--biggest;
+			}
+			pa(tab_a, tab_b, len_a, len_b);
 		}
 	}
 	quick_sort_a(tab_a, tab_b, len_a, len_b); 
