@@ -6,12 +6,14 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:18:15 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/10 17:50:58 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/10 18:00:45 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
+
+// opti pour qsa 
 
 int	is_biggest(int *tab, int len)
 {
