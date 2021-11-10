@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:18:15 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/09 17:04:38 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/10 11:24:48 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,34 @@ int	in_order(int *tab, int len)
 
 	i = 0;
 	if (len <= 1)
+		return (1);
+	while (i + 1 < len)
 	{
-		return(1);
-	}
-	while(i + 1 < len)
-	{
-		if(tab[i] < tab[i + 1])
+		if (tab[i] < tab[i + 1])
 			++i;
 		else 
-			return(0);
+			return (0);
 	}
-	return(1);
+	return (1);
 }
+
+int decrease(int *tab, int len)
+{
+	int i;
+
+	i = 0;
+	if (len <= 1)
+		return (1);
+	while (i + 1 < len)
+	{
+		if (tab[i] > tab[i + 1])
+			++i;
+		else
+			return (0);
+	}
+	return (1);
+}
+
 /*
 void	print_stack_a(int *tab, int len)
 {
@@ -56,14 +72,15 @@ void	print_stack_b(int *tab, int len)
 	}
 }
 */
-int	is_shortest(int *tab, int len)
+
+int	is_biggest(int *tab, int len)
 {
 	int i;
 
 	i = 1;
 	while (i < len)
 	{
-		if (tab[0] > tab[i])
+		if (tab[0] < tab[i])
 			return (1);
 		++i;
 	}
@@ -88,12 +105,12 @@ int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 	mediane = find_mediane(tab_a, *len_a);
 	while(*len_a > i)
 	{
-		if (tab_a[0] <= mediane && tab_a[0] < tab_a[1])
+		if (tab_a[0] >= mediane && tab_a[0] > tab_a[1])
 		{
 			ra(tab_a, *len_a);
 			++i;
 		}
-		else if (tab_a[0] <= mediane && tab_a[0] > tab_a[1])
+		else if (tab_a[0] >= mediane && tab_a[0] < tab_a[1])
 		{
 			sa(tab_a);
 			ra(tab_a, *len_a);
@@ -123,46 +140,34 @@ int	quick_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b)
 //	print_stack_b(tab_b, *len_b);
 	if (*len_b == 0)
 		return (0);
-	if (*len_b == 2 && in_order(tab_b, *len_b) != 1)
+	if (*len_b == 2 && decrease(tab_b, *len_b) != 1)
 		sb(tab_b);
-	if (in_order(tab_b, *len_b) == 1)
+	if (decrease(tab_b, *len_b) == 1)
 	{
 		while(i < *len_b)
-		{
 			pa(tab_a, tab_b, len_a, len_b);
-			ra(tab_a, *len_a);
-		}
 		return(0);
 	}
 	mediane = find_mediane(tab_b, *len_b);
 	j = 1;
 	while(*len_b > i)
 	{
-		if (tab_b[0] > mediane)
+		if (tab_b[0] < mediane)
 		{
 			rb(tab_b, *len_b);
 			++i;
 		}
-		if (tab_b[0] <= mediane)
+		if (tab_b[0] >= mediane)
 		{
-			if (is_shortest(tab_b, *len_b) == 0)
-			{
+			if (is_biggest(tab_b, *len_b) == 0)
 				pa(tab_a, tab_b, len_a, len_b);
-				ra(tab_a, *len_a);
-			}
 			else
 			{
 				rb(tab_b, *len_b);
 				++i;
 			}
 		}
-/*		else
-		{
-			pa(tab_a, tab_b, len_a, len_b);
-			ra(tab_a, *len_a);
-		}
-*/	}
 	quick_sort_a(tab_a, tab_b, len_a, len_b); 
 	quick_sort_b(tab_a, tab_b, len_a, len_b);
-	return(0);
-
+	return (0);
+}
