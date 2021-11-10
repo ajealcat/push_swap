@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 15:09:52 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/10 12:42:11 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/10 12:45:51 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ int		*create_tmp(int *tab, int len)
 	int i;
 
 	i = 0;
-	tab_tmp = malloc(sizeof(int) * len_a);
+	tab_tmp = malloc(sizeof(int) * len);
 	if(tab_tmp == NULL)
 		return(0);
-	while(i < len_a)
+	while(i < len)
 	{
-		tab_tmp[i] = tab_a[i];
+		tab_tmp[i] = tab[i];
 		++i;
 	}
 	return(tab_tmp);
@@ -96,16 +96,16 @@ int	search_biggest(int *tab, int len)
 {
 	int i;
 	int count;
-	int tab_tmp;
+	int *tab_tmp;
 
 	i = 1;
 	count = 0;
 	tab_tmp = create_tmp(tab, len);
 	while (i < len)
 	{
-		if (tmp_tab[0] < tmp_tab[i])
+		if (tab_tmp[0] < tab_tmp[i])
 		{
-			tmp_tab[0] = tmp_tab[i];
+			tab_tmp[0] = tab_tmp[i];
 			count = i;
 		}
 		++i;
