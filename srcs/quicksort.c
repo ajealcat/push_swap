@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:18:15 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/10 18:00:45 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/12 15:17:38 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,26 +34,29 @@ int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 	int mediane;
 	int i;
 
-	i = 0;
-	if(*len_a == 0 || in_order(tab_a, *len_a) == 1)
-		return (0);
-	else if (*len_a == 2)
+	while (in_order(tab_a, *len_a) == 0)
 	{
-		sa(tab_a);
-		return (0);
-	}
-	mediane = find_mediane(tab_a, *len_a);
-	while(*len_a  > i)
-	{
-		if (tab_a[0] > mediane)
+		i = 0;
+		if (*len_a == 2)
 		{
-			ra(tab_a, *len_a);
-			++i;
+			sa(tab_a);
+			break ;
 		}
 		else
-			pb(tab_a, tab_b, len_a, len_b);
+		{
+			mediane = find_mediane(tab_a, *len_a);
+			while(*len_a  > i)
+			{
+				if (tab_a[0] >= mediane)
+				{
+					ra(tab_a, *len_a);
+					++i;
+				}
+				else
+					pb(tab_a, tab_b, len_a, len_b);
+			}
+		}
 	}
-	quick_sort_a(tab_a, tab_b, len_a, len_b); 
 	quick_sort_b(tab_a, tab_b, len_a, len_b);
 	return (0);
 }
@@ -98,7 +101,5 @@ int	quick_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b)
 			pa(tab_a, tab_b, len_a, len_b);
 		}
 	}
-	quick_sort_a(tab_a, tab_b, len_a, len_b); 
-	quick_sort_b(tab_a, tab_b, len_a, len_b);
 	return (0);
 }
