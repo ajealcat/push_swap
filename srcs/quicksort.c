@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:18:15 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/12 17:37:48 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/12 19:06:08 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,15 @@ int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 					++i;
 				}
 				else
-					pb(tab_a, tab_b, len_a, len_b);
+				{
+					if (tab_a[0] > tab_a[1])
+					{
+						sa(tab_a);
+						pb(tab_a, tab_b, len_a, len_b);
+					}
+					else if (tab_a[0] < tab_a[1])
+						pb(tab_a, tab_b, len_a, len_b);
+				}
 			}
 		}
 	}
