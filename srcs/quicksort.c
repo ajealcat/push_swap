@@ -6,14 +6,12 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:18:15 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/12 16:47:33 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/12 17:37:48 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
-
-// opti pour qsa 
 
 int	is_biggest(int *tab, int len)
 {
@@ -38,10 +36,9 @@ int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 	{
 		i = 0;
 		if (*len_a == 2)
-		{
 			sa(tab_a);
-			break ;
-		}
+		else if (*len_a == 3)
+			qs_3(tab_a, len_a);
 		else
 		{
 			mediane = find_mediane(tab_a, *len_a);

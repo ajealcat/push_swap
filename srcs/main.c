@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/12 16:47:35 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/12 17:37:46 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,27 +133,7 @@ int		main(int ac, char **av)
 			return (0);
 		}
 	}
-/*	pb(tab_a, tab_b, len_a, len_b);
-	pb(tab_a, tab_b, len_a, len_b);
-	pa(tab_a, tab_b, len_a, len_b);
-	pa(tab_a, tab_b, len_a, len_b);
-	int j;
-
-	j = 0;
-	while(j < *len_a)
-	{
-		printf("tableau a = %d\n", tab_a[j]);
-		++j;
-	}
-	j = 0;
-	while(j < *len_b)
-	{
-		printf("tableau b = %d\n", tab_b[j]);
-		++j;
-	}
 	quick_sort_a(tab_a, tab_b, len_a, len_b);
-*/	if (ac - 1 == 3)
-		qs_3(tab_a, len_a);
 	free(tab_a);
 	free(tab_b);
 	free(len_a);

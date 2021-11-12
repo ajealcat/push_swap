@@ -6,7 +6,7 @@
 /*   By: ajearuth <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 14:29:14 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/12 16:47:31 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/12 17:37:44 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,3 @@ int	qs_3(int *tab, int *len)
 	return (0);
 }
 
-int qs_5(int *tab_a, int * tab_b, int len_a, int len_b)
-{
-	
-}
