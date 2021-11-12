@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 11:27:49 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/10 17:07:02 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/12 16:25:04 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ int is_biggest(int *tab, int len);
 int quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b);
 int search_biggest(int *tab, int len);
 int quick_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b);
+int qs_3(int *tab, int *len);
 
 #endif

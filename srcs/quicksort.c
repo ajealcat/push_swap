@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:18:15 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/12 15:17:38 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/12 16:47:33 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 	quick_sort_b(tab_a, tab_b, len_a, len_b);
 	return (0);
 }
-
 
 int	quick_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b)
 {
