@@ -6,25 +6,53 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:18:15 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/15 15:36:27 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/16 17:37:42 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-int	is_biggest(int *tab, int len)
+int	search_biggest(int *tab, int len)
 {
 	int i;
+	int count;
+	int *tab_tmp;
 
 	i = 1;
+	count = 0;
+	tab_tmp = create_tmp(tab, len);
 	while (i < len)
 	{
-		if (tab[0] < tab[i])
-			return (1);
+		if (tab_tmp[0] < tab_tmp[i])
+		{
+			tab_tmp[0] = tab_tmp[i];
+			count = i;
+		}
 		++i;
 	}
-	return (0);
+	return (count);
+}
+
+int	search_smallest(int *tab, int len)
+{
+	int i;
+	int count;
+	int *tab_tmp;
+
+	i = 1;
+	count = 0;
+	tab_tmp = create_tmp(tab, len);
+	while (i < len)
+	{
+		if (tab_tmp[0] > tab_tmp[i])
+		{
+			tab_tmp[0] = tab_tmp[i];
+			count = i;
+		}
+		++i;
+	}
+	return (count);
 }
 
 int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
@@ -38,11 +66,11 @@ int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 		if (*len_a == 2)
 			sa(tab_a);
 		else if (*len_a == 3)
-			qs_3(tab_a, len_a);
+			qs_three(tab_a, len_a);
 		else
 		{
 			mediane = find_mediane(tab_a, *len_a);
-			while(*len_a  > i)
+			while(*len_a > i)
 			{
 				if (tab_a[0] >= mediane)
 				{
@@ -50,15 +78,7 @@ int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 					++i;
 				}
 				else
-				{
-					if (tab_a[0] > tab_a[1])
-					{
-						sa(tab_a);
-						pb(tab_a, tab_b, len_a, len_b);
-					}
-					else if (tab_a[0] < tab_a[1])
-						pb(tab_a, tab_b, len_a, len_b);
-				}
+					pb(tab_a, tab_b, len_a, len_b);
 			}
 		}
 	}

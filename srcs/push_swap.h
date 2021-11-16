@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 11:27:49 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/12 16:25:04 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/16 17:37:40 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,16 @@ void rrb(int *tab_b, int len_b);
 void rrr(int *tab_a, int len_a, int *tab_b, int len_b);
 int *create_tmp(int *tab, int len);
 int find_mediane(int *tab_a, int len_a);
+int find_it(int *tab_a, int len_a, int it);
 int in_order(int *tab, int len);
 int decrease(int *tab, int len);
 int is_biggest(int *tab, int len);
 int quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b);
 int search_biggest(int *tab, int len);
+int	search_smallest(int *tab, int len);
 int quick_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b);
-int qs_3(int *tab, int *len);
+int qs_three(int *tab, int *len);
+int weird_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b);
+int	weird_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b);
 
 #endif
