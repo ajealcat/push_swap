@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 14:29:14 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/17 17:03:06 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/17 17:36:37 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,17 @@ int	weird_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 						pb(tab_a, tab_b, len_a, len_b);
 				}
 			//	print_stacks(tab_a, tab_b, *len_a, *len_b);
+			if (count <= *len_a / 2)
+			{
 				while(count--)
 					ra(tab_a, *len_a);
+			}
+			else
+			{
+				count = *len_a - count;
+				while(count--)
+					rra(tab_a, *len_a);
+			}
 				weird_sort_b(tab_a, tab_b, len_a, len_b);
 			//	print_stacks(tab_a, tab_b, *len_a, *len_b);
 				++it;
