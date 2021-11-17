@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 15:09:52 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/16 17:22:18 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/17 12:42:27 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int		find_it(int *tab_a, int len_a, int it)
 		}
 		++i;
 	}
-	tmp = tab_tmp[((len_a * it) / 8) - 1 + ((len_a * it) % 8)];
+	tmp = tab_tmp[len_a - (len_a * (8 - it) / 8)];
 	free(tab_tmp);
 	return(tmp);
 }
