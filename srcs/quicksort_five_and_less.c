@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 14:29:14 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/17 14:45:52 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/17 17:03:06 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,25 +85,27 @@ int	weird_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 			while (it <= 8 && in_order(tab_a, *len_a) == 0)
 			{
 				i = *len_a * (8 - (it - 1)) / 8;
-				count = *len_a;
+//				printf("i : %d\n", i);
+				count = *len_a - i;
 				mediane = find_it(tab_a, *len_a, it);
 				while(i--)
 				{
-					if (tab_a[0] >= mediane)
+					if (tab_a[0] >= mediane && it != 8)
 						ra(tab_a, *len_a);	
 					else
 						pb(tab_a, tab_b, len_a, len_b);
-					--count;
 				}
-//				print_stacks(tab_a, tab_b, *len_a, *len_b);
-				while(count-- && it < 8)
+			//	print_stacks(tab_a, tab_b, *len_a, *len_b);
+				while(count--)
 					ra(tab_a, *len_a);
 				weird_sort_b(tab_a, tab_b, len_a, len_b);
-//				print_stacks(tab_a, tab_b, *len_a, *len_b);
+			//	print_stacks(tab_a, tab_b, *len_a, *len_b);
 				++it;
 			}
 		}
 	}
+//	print_stacks(tab_a, tab_b, *len_a, *len_b);
+//	printf("len a : %d\n", *len_a);
 	return (0);
 }
 
