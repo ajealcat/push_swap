@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 15:09:52 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/17 17:36:46 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/18 14:45:38 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,35 +54,6 @@ int		find_mediane(int *tab_a, int len_a)
 		++i;
 	}
 	tmp = tab_tmp[(len_a / 2) - 1 + (len_a % 2)];
-	free(tab_tmp);
-	return(tmp);
-}
-
-int		find_it(int *tab_a, int len_a, int it)
-{
-	int i;
-	int j;
-	int tmp;
-	int *tab_tmp;
-
-	i = 0;
-	tab_tmp = create_tmp(tab_a, len_a);
-	while(i < len_a)
-	{
-		j = i + 1;
-		while (j < len_a)
-		{
-			if(tab_tmp[i] > tab_tmp[j])
-			{
-				tmp = tab_tmp[i];
-				tab_tmp[i] = tab_tmp[j];
-				tab_tmp[j] = tmp;
-			}
-			++j;
-		}
-		++i;
-	}
-	tmp = tab_tmp[len_a - (len_a * (8 - it) / 8)];
 	free(tab_tmp);
 	return(tmp);
 }

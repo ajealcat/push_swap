@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/17 17:36:38 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/18 14:38:07 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,9 @@ int		main(int ac, char **av)
 	}
 	if (ac - 1 < 50)
 		quick_sort_a(tab_a, tab_b, len_a, len_b);
-	else 
+	else if (ac - 1 == 100)
+		weird_sort_hundred_a(tab_a, tab_b, len_a, len_b);
+	else
 		weird_sort_a(tab_a, tab_b, len_a, len_b);
 	free(tab_a);
 	free(tab_b);
