@@ -6,14 +6,14 @@
 #    By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/15 09:56:00 by ajearuth          #+#    #+#              #
-#    Updated: 2021/11/18 14:35:03 by ajearuth         ###   ########.fr        #
+#    Updated: 2021/11/19 15:31:55 by ajearuth         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 BIN = push_swap
 
 SRCS = main.c operations.c operations_r.c operations_rr.c quicksort_utils.c \
-		quicksort.c weird_sort.c weird_sort_utils.c
+		quicksort.c weird_sort.c weird_sort_utils.c main_utils.c
 SRCSD = srcs/
 bonus = \
 

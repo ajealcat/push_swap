@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/18 14:38:07 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/19 15:32:50 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,19 +117,13 @@ int		main(int ac, char **av)
 		if (ft_fill_tab_a(ac, av, tab_a) == 1 || ft_check_arg(ac, av) == 1)
 		{
 			ft_putstr_fd("Error\n", 2);
-			free(tab_a);
-			free(tab_b);
-			free(len_a);
-			free(len_b);
+			free_all(tab_a, tab_b, len_a, len_b);
 			return (0);
 		}
 		if (ft_check_double(ac, tab_a) == 1)
 		{
 			ft_putstr_fd("Error\n", 2);
-			free(tab_a);
-			free(tab_b);
-			free(len_a);
-			free(len_b);
+			free_all(tab_a, tab_b, len_a, len_b);
 			return (0);
 		}
 	}
@@ -139,9 +133,6 @@ int		main(int ac, char **av)
 		weird_sort_hundred_a(tab_a, tab_b, len_a, len_b);
 	else
 		weird_sort_a(tab_a, tab_b, len_a, len_b);
-	free(tab_a);
-	free(tab_b);
-	free(len_a);
-	free(len_b);
+	free_all(tab_a, tab_b, len_a, len_b);
 	return (0);
 }

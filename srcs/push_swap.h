@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 11:27:49 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/18 14:50:17 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/19 15:31:38 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include "../libft/libft.h"
 
 int	main(int ac, char **av);
+int	free_all(int *tab_a, int *tab_b, int *len_a, int *len_b);
 void sa(int *tab_a);
 void sb(int *tab_b);
 void pa(int *tab_a, int *tab_b, int *len_a, int *len_b);
