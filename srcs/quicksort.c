@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:18:15 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/18 14:24:08 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/19 17:07:54 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	search_biggest(int *tab, int len)
 		}
 		++i;
 	}
+	free(tab_tmp);
 	return (count);
 }
 
@@ -52,6 +53,7 @@ int	search_smallest(int *tab, int len)
 		}
 		++i;
 	}
+	free(tab_tmp);
 	return (count);
 }
 

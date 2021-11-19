@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/19 15:32:50 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/19 17:36:50 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,17 @@ int		ft_fill_tab_a(int ac, char **av, int *tab_a)
 	return (0);
 }
 
-int		*ft_fill_tab_b(int ac, int *tab_b)
+int		*ft_fill_tab_b(int ac, int *tab_b, int *tab_a)
 {
 	int i;
 
 	i = 0; 
+	tab_b = malloc(sizeof(int) * ac);
+	if (tab_b == NULL)
+	{
+		free(tab_a);
+		return (0);
+	}
 	while (ac != i)
 	{
 		tab_b[i] = '\0';
@@ -94,24 +100,15 @@ int		main(int ac, char **av)
 	int *len_a;
 	int *len_b;
 
-	len_a = malloc(sizeof(int) * 1);
-	if (len_a == NULL)
-		return (0);
-	len_a[0] = ac - 1;
-	len_b = malloc(sizeof(int) * 1);
-	if (len_b == NULL)
-		return (0);
-	len_b[0] = 0;
+	len_a = NULL;
+	len_b = NULL;
+	tab_b = NULL;
+	len_a = security_first_len(len_a, ac - 1);
+	len_b = security_first_len(len_b, 0);
 	tab_a = malloc(sizeof(int) * ac);
 	if (tab_a == NULL)
 		return (0);
-	tab_b = malloc(sizeof(int) * ac);
-	if (tab_b == NULL)
-	{
-		free(tab_a);
-		return (0);
-	}
-	tab_b = ft_fill_tab_b(ac, tab_b);
+	tab_b = ft_fill_tab_b(ac, tab_b, tab_a);
 	if (ac > 1)
 	{
 		if (ft_fill_tab_a(ac, av, tab_a) == 1 || ft_check_arg(ac, av) == 1)
