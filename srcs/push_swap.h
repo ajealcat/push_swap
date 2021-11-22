@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 11:27:49 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/22 15:27:13 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/22 16:43:54 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	ft_check_arg(int ac, char **av);
 int	ft_fill_tab_a(int ac, char **av, int *tab_a);
 int *ft_fill_tab_b(int ac, int *tab_b, int *tab_a);
 int	free_all(int *tab_a, int *tab_b, int *len_a, int *len_b);
+int free_tabs(int *tab_a, int *tab_b);
 int *security_first_len(int *len, int size);
 int error_manager(int ac, char **av, int *tab_a);
 int just_do_it(int *tab_a, int *tab_b, int *len_a, int *len_b);

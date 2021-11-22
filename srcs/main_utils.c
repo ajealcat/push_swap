@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 15:29:22 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/22 14:53:45 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/22 16:28:59 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,12 @@ int just_do_it(int *tab_a, int *tab_b, int *len_a, int *len_b)
 		weird_sort_hundred_a(tab_a, tab_b, len_a, len_b);
 	else
 		weird_sort_a(tab_a, tab_b, len_a, len_b);
+	return(0);
+}
+
+int free_tabs(int *tab_a, int *tab_b)
+{
+	free(tab_a);
+	free(tab_b);
 	return(0);
 }
