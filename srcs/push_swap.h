@@ -6,13 +6,18 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 11:27:49 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/22 14:53:56 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/22 15:27:13 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "../libft/libft.h"
+# include <unistd.h>
+# include <stdlib.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4096
+# endif
 
 int	main(int ac, char **av);
 int	ft_check_double(int ac, int *tab_a);
@@ -51,5 +56,14 @@ int weird_sort_hundred_a(int *tab_a, int *tab_b, int *len_a, int *len_b);
 int weird_sort_hundred_b(int *tab_a, int *tab_b, int *len_a, int *len_b);
 int to_the_top(int *tab_b, int *len_b, int nb);
 int is_closest(int i, int len);
+
+// BONUS //
+
+int	get_next_line(int fd, char **line);
+int	ft_strlen(char *str);
+char *ft_strndup(char *str, int n);
+int	ft_find_end(const char *str, char c);
+char *ft_next_buffer(char *new_buffer, char *buffer);
+char *ft_strnjoin(char *s1, char *s2, int n);
 
 #endif

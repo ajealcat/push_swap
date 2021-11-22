@@ -6,12 +6,11 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/22 14:54:55 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/22 15:27:17 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int		ft_check_double(int ac, int *tab_a)
 {
