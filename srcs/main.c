@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/19 17:36:50 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/22 14:54:55 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,9 @@ int		ft_fill_tab_a(int ac, char **av, int *tab_a)
 	j = 0;
 	while (i != ac)
 	{
-		if (ft_atoi(av[i]) > 2147483647 || ft_atoi(av[i]) < -2147483648)
+		if (ft_strlen(av[i]) > 11)
+			return(1);
+		else if (ft_atoi(av[i]) > 2147483647 || ft_atoi(av[i]) < -2147483648)
 			return (1);
 		else 
 		{
@@ -111,25 +113,13 @@ int		main(int ac, char **av)
 	tab_b = ft_fill_tab_b(ac, tab_b, tab_a);
 	if (ac > 1)
 	{
-		if (ft_fill_tab_a(ac, av, tab_a) == 1 || ft_check_arg(ac, av) == 1)
+		if (error_manager(ac, av, tab_a) == 1)
 		{
-			ft_putstr_fd("Error\n", 2);
-			free_all(tab_a, tab_b, len_a, len_b);
-			return (0);
-		}
-		if (ft_check_double(ac, tab_a) == 1)
-		{
-			ft_putstr_fd("Error\n", 2);
 			free_all(tab_a, tab_b, len_a, len_b);
 			return (0);
 		}
 	}
-	if (ac - 1 < 50)
-		quick_sort_a(tab_a, tab_b, len_a, len_b);
-	else if (ac - 1 == 100)
-		weird_sort_hundred_a(tab_a, tab_b, len_a, len_b);
-	else
-		weird_sort_a(tab_a, tab_b, len_a, len_b);
+	just_do_it(tab_a, tab_b, len_a, len_b);
 	free_all(tab_a, tab_b, len_a, len_b);
 	return (0);
 }
