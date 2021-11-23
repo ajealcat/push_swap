@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 11:27:49 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/23 10:25:11 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/23 11:44:54 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int		weird_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b);
 int		weird_sort_hundred_a(int *tab_a, int *tab_b, int *len_a, int *len_b);
 int		weird_sort_hundred_b(int *tab_a, int *tab_b, int *len_a, int *len_b);
 int		to_the_top(int *tab_b, int *len_b, int nb);
-int		is_closest(int i, int len);
+int		closest(int i, int len);
 
 // BONUS //
 
