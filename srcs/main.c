@@ -6,16 +6,16 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/22 15:27:17 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/23 10:16:16 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		ft_check_double(int ac, int *tab_a)
+int	ft_check_double(int ac, int *tab_a)
 {
-	int i;
-	int comp_i;
+	int	i;
+	int	comp_i;
 
 	i = 0;
 	while (i < ac - 1)
@@ -30,10 +30,10 @@ int		ft_check_double(int ac, int *tab_a)
 	return (0);
 }
 
-int		ft_check_arg(int ac, char **av)
+int	ft_check_arg(int ac, char **av)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	while (i != ac)
@@ -45,27 +45,27 @@ int		ft_check_arg(int ac, char **av)
 				++j;
 			while (ft_isdigit(av[i][j]) == 0)
 				return (1);
-		++j;
+			++j;
 		}
-	++i;
+		++i;
 	}
 	return (0);
 }
 
-int		ft_fill_tab_a(int ac, char **av, int *tab_a)
+int	ft_fill_tab_a(int ac, char **av, int *tab_a)
 {
-	int i;
-	int j;
-	
+	int	i;
+	int	j;
+
 	i = 1;
 	j = 0;
 	while (i != ac)
 	{
 		if (ft_strlen(av[i]) > 11)
-			return(1);
+			return (1);
 		else if (ft_atoi(av[i]) > 2147483647 || ft_atoi(av[i]) < -2147483648)
 			return (1);
-		else 
+		else
 		{
 			tab_a[j] = ft_atoi(av[i]);
 			++i;
@@ -75,11 +75,11 @@ int		ft_fill_tab_a(int ac, char **av, int *tab_a)
 	return (0);
 }
 
-int		*ft_fill_tab_b(int ac, int *tab_b, int *tab_a)
+int	*ft_fill_tab_b(int ac, int *tab_b, int *tab_a)
 {
-	int i;
+	int	i;
 
-	i = 0; 
+	i = 0;
 	tab_b = malloc(sizeof(int) * ac);
 	if (tab_b == NULL)
 	{
@@ -94,12 +94,12 @@ int		*ft_fill_tab_b(int ac, int *tab_b, int *tab_a)
 	return (tab_b);
 }
 
-int		main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	int *tab_a;
-	int *tab_b;
-	int *len_a;
-	int *len_b;
+	int	*tab_a;
+	int	*tab_b;
+	int	*len_a;
+	int	*len_b;
 
 	len_a = NULL;
 	len_b = NULL;
