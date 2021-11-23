@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/16 10:29:34 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/23 10:16:16 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/23 16:03:26 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ int	ft_fill_tab_a(int ac, char **av, int *tab_a)
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	j = 0;
-	while (i != ac)
+	while (i != ac - 1)
 	{
 		if (ft_strlen(av[i]) > 11)
 			return (1);
@@ -94,6 +94,8 @@ int	*ft_fill_tab_b(int ac, int *tab_b, int *tab_a)
 	return (tab_b);
 }
 
+#include <stdio.h> 
+
 int	main(int ac, char **av)
 {
 	int	*tab_a;
@@ -117,6 +119,11 @@ int	main(int ac, char **av)
 			free_all(tab_a, tab_b, len_a, len_b);
 			return (0);
 		}
+	}
+	while(ac != 0)
+	{
+		printf("tab_a main  = %d\n", *tab_a++);
+		--ac;
 	}
 	just_do_it(tab_a, tab_b, len_a, len_b);
 	free_all(tab_a, tab_b, len_a, len_b);
