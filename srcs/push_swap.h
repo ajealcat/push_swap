@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 11:27:49 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/22 16:43:54 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/23 10:10:29 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int is_closest(int i, int len);
 // BONUS //
 
 int	get_next_line(int fd, char **line);
-int	ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 char *ft_strndup(char *str, int n);
 int	ft_find_end(const char *str, char c);
 char *ft_next_buffer(char *new_buffer, char *buffer);

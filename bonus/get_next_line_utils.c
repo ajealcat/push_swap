@@ -6,13 +6,13 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:23:28 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/22 15:23:45 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/23 10:10:26 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../srcs/push_swap.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 
