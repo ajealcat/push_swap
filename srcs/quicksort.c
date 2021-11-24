@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 19:18:15 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/23 10:31:19 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/24 12:14:52 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	qs_three(int *tab, int *len)
 int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 {
 	int	mediane;
-	int	i;
+	int i;
 
 	while (in_order(tab_a, *len_a) == 0)
 	{
@@ -112,11 +112,8 @@ int	quick_sort_a(int *tab_a, int *tab_b, int *len_a, int *len_b)
 int	quick_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b)
 {
 	int	i;
-	int	biggest;
 
 	i = 0;
-	if (*len_b == 0)
-		return (0);
 	if (*len_b == 2 && decrease(tab_b, *len_b) != 1)
 		sb(tab_b);
 	if (decrease(tab_b, *len_b) == 1)
@@ -125,28 +122,6 @@ int	quick_sort_b(int *tab_a, int *tab_b, int *len_a, int *len_b)
 			pa(tab_a, tab_b, len_a, len_b);
 		return (0);
 	}
-	while (*len_b)
-	{
-		biggest = search_biggest(tab_b, *len_b);
-		if (biggest <= *len_b / 2)
-		{
-			while (biggest)
-			{
-				rb(tab_b, *len_b);
-				--biggest;
-			}
-			pa(tab_a, tab_b, len_a, len_b);
-		}
-		else if (biggest > *len_b / 2)
-		{
-			biggest = *len_b - biggest;
-			while (biggest)
-			{
-				rrb(tab_b, *len_b);
-				--biggest;
-			}
-			pa(tab_a, tab_b, len_a, len_b);
-		}
-	}
+	moove_biggest(tab_a, tab_b, len_a, len_b);
 	return (0);
 }

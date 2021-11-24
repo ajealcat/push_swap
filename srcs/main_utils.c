@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 15:29:22 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/23 16:03:21 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/23 10:18:19 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,53 +30,14 @@ int	*security_first_len(int *len, int size)
 	return (len);
 }
 
-size_t tablen(char **tab)
-{
-	size_t	tablen;
-
-	tablen = 0;
-	while (tab[tablen])
-		++tablen;
-	return (tablen);
-}
-
-#include <stdio.h>
-
 int	error_manager(int ac, char **av, int *tab_a)
 {
-	char 	**av_bis;
-
-	if (ft_strchr(av[1], ' ') != NULL && ac == 2)
-	{
-		av_bis = ft_split(av[1], ' ');
-		ac = tablen(av_bis);
-		ft_fill_tab_a(ac + 1, av_bis, tab_a);
-		if (ft_fill_tab_a(ac + 1, av_bis, tab_a) == 1 || ft_check_arg(ac, av_bis) == 1)
-		{
-			ft_putstr_fd("Error\n", 2);
-			return (1);
-		}
-		else if (ft_check_double(ac, tab_a) == 1)
-		{
-			ft_putstr_fd("Error\n", 2);
-			return (1);
-		}
-		while(ac != 0)
-		{
-			printf("ac = %d\n", ac);
-			printf("tab_a = %d\n", *tab_a++);
-			--ac;
-		}
-
-		free(av_bis);
-		return (0);
-	}
-	else if (ft_fill_tab_a(ac, av + 1, tab_a) == 1 || ft_check_arg(ac, av) == 1)
+	if (ft_fill_tab_a(ac, av, tab_a) == 1 || ft_check_arg(ac, av) == 1)
 	{
 		ft_putstr_fd("Error\n", 2);
 		return (1);
 	}
-	else if (ft_check_double(ac, tab_a) == 1)
+	if (ft_check_double(ac, tab_a) == 1)
 	{
 		ft_putstr_fd("Error\n", 2);
 		return (1);
