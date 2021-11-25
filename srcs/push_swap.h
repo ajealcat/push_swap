@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 11:27:49 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/24 11:48:20 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/25 14:22:10 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	rrb(int *tab_b, int len_b);
 void	rrr(int *tab_a, int len_a, int *tab_b, int len_b);
 int		*create_tmp(int *tab, int len);
 int		find_mediane(int *tab_a, int len_a);
+int		parse_med(int *tab_a, int *tab_b, int *len_a, int *len_b);
 int		find_it(int *tab_a, int len_a, int it);
 int		find_it_hundred(int *tab_a, int len_a, int it);
 int		find_the_best_way(int *tab_a, int *tab_b, int *len_A, int *len_b);
