@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:28:28 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/24 22:05:22 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/25 18:03:38 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,72 +34,71 @@ static char	**tab_list(void)
 	return (tab);
 }
 
-static void	ft_execute_operation(int index, int *tab_a, int *tab_b)
+static void	execute_operation(int index, t_stack tablen)
 {
 	if (index == 0)
-		p(b, a);
+		pb(tab_a, tab_b, len_a, len_b);
 	else if (index == 1)
-		p(a, b);
+		pa(tab_a, tab_b, len_a, len_b);
 	else if (index == 2)
-		double_s(a, b);
+		ss(tab_a, tab_b);
 	else if (index == 3)
-		double_r(a, b);
+		rr(tab_a, *len_a, tab_b, *len_b);
 	else if (index == 4)
-		double_rr(a, b);
+		rrr(tab_a, *len_a, tab_b, *len_b);
 	else if (index == 5)
-		s(a);
+		sa(tab_a);
 	else if (index == 6)
-		s(b);
+		sb(tab_b);
 	else if (index == 7)
-		r(a);
+		ra(tab_a, *len_a);
 	else if (index == 8)
-		r(b);
+		rb(tab_b, *len_b);
 	else if (index == 9)
-		rr(a);
+		rra(tab_a, *len_a);
 	else if (index == 10)
-		rr(b);
+		rrb(tab_b, *len_b);
 	else
 		return ;
 }
 
-static int	ft_opfinder(char **op_list, char *op)
+static int	opfinder(char **tab_list, char *op)
 {
 	int	i;
 
 	i = 0;
-	while (i < 12 && op_list[i] != NULL)
+	while (i < 12 && tab_list[i] != NULL)
 	{
-		if ((ft_strlen(op_list[i]) - 1) == ft_strlen(op)
-			&& ft_strncmp(op_list[i], op, ft_strlen(op_list[i]) - 1) == 0)
+		if ((ft_strlen(tab_list[i]) - 1) == ft_strlen(op)
+			&& ft_strncmp(tab_list[i], op, ft_strlen(tab_list[i]) - 1) == 0)
 			return (i);
 		++i;
 	}
 	return (-1);
 }
 
-static int	ft_checker(int *tab_a, int *tab_b)
+static int	checker(int *tab_a, int *tab_b, t_stack tablen)
 {
 	char	**tab_list;
 	char	*line;
 
-	tab_list = tab_list();
 	while (get_next_line(0, &line) > 0)
 	{
-		if (ft_opfinder(tab_list, line) == -1)
+		if (opfinder(tab_list, line) == -1)
 		{
 			ft_putstr_fd("Error\n", 2);
 			free(tab_list);
 			free(line);
-			return (42 * liberator(a, b));
+			return (free_tabs(tab_a, tab_b));
 		}
-		ft_execute_operation(ft_opfinder(tab_list, line), a, b);
+		execute_operation(opfinder(tab_list, line), tablen);
 		free(line);
 	}
 	free(tab_list);
 	if (line == NULL)
 	{
 		ft_putstr_fd("Error\n", 2);
-		return (42 * liberator(a, b));
+		return (free_tabs(tab_a, tab_b));
 	}
 	free(line);
 	return (0);
@@ -107,24 +106,32 @@ static int	ft_checker(int *tab_a, int *tab_b)
 
 int	main(int ac, char **av)
 {
-	t_stack	*a;
-	t_stack	*b;
+	int	*tab_a;
+	int *tab_b;
+	int *len_a;
+	int *len_b;
+	t_stack	tablen;
 
+	len_a = NULL;
+	len_b = NULL;
+	tab_b = NULL;
+	len_a = security_first_len(len_a, ac - 1);
+	len_b = security_first_len(len_b, 0);
 	if (ft_error(ac, av))
-		return (42);
-	a = ft_init(av, ac - 1, 'c');
-	if (a == NULL)
-		return (42);
-	b = ft_init(NULL, 0, 'd');
-	if (b == NULL)
-		return (42 * liberator(a, NULL));
-	if (ft_checker(a, b) == 0)
+		return (0);
+	tab_a = malloc(sizeof(int) * ac);
+	if (tab_a == NULL)
+		return (0);
+	tab_a = fill_tab_a(ac, av, tab_a);
+	tab_b = fill_tab_b(ac, tab_b, tab_a);
+	tablen = init_struct(tab_a, tab_b, len_a, len_b);
+	if (checker(tab_a, tab_b, tablen) == 0)
 	{
-		if ((ft_is_sorted(a)) && (b->len == 0))
+		if ((in order(tab_a, *len_a) && (*len_b == 0))
 			ft_putstr_fd("OK\n", 1);
 		else
 			ft_putstr_fd("KO\n", 1);
-		liberator(a, b);
+		free_all(tab_a, tab_b, len_a, len_b);
 	}
 	return (0);
 }

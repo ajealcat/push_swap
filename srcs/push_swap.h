@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 11:27:49 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/25 15:17:03 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/25 17:54:57 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int		just_do_it(int *tab_a, int *tab_b, int *len_a, int *len_b);
 int		moove_biggest(int *tab_a, int *tab_b, int *len_a, int *len_b);
 void	sa(int *tab_a);
 void	sb(int *tab_b);
+void	ss(int *tab_a, int *tab_b);
 void	pa(int *tab_a, int *tab_b, int *len_a, int *len_b);
 void	pb(int *tab_a, int *tab_b, int *len_a, int *len_b);
 void	ra(int *tab_a, int len_a);
@@ -71,5 +72,15 @@ char	*ft_strndup(char *str, int n);
 int		ft_find_end(const char *str, char c);
 char	*ft_next_buffer(char *new_buffer, char *buffer);
 char	*ft_strnjoin(char *s1, char *s2, int n);
+
+typedef struct s_stack
+{
+	int *tab_a;
+	int *tab_b;
+	int *len_a;
+	int *len_b;
+}	t_stack;
+
+t_stack	init_struct(int *tab_a, int *tab_b, int *len_a, int *len_b);
 
 #endif
