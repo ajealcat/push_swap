@@ -6,7 +6,7 @@
 /*   By: ajearuth <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 14:15:23 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/25 15:20:22 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/25 16:38:03 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	ftbw_hundred(int *tab_a, int *tab_b, int *len_a, int *len_b)
 	{
 		i = *len_a * (3 - (it - 1)) / 3;
 		count = *len_a - i;
-		mediane = find_it(tab_a, *len_a, it);
+		mediane = find_it_hundred(tab_a, *len_a, it);
 		while (i--)
 		{
 			if (tab_a[0] >= mediane && it != 3)
