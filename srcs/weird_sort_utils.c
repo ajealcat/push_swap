@@ -6,7 +6,7 @@
 /*   By: ajearuth <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 14:34:05 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/24 11:51:09 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/25 15:09:57 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,34 +99,28 @@ int	find_it_hundred(int *tab_a, int len_a, int it)
 	return (tmp);
 }
 
-int	find_the_best_way(int *tab_a, int *tab_b, int *len_a, int *len_b)
+void	find_the_best_way(int *tab_a, int *tab_b, int *len_a, int *len_b)
 {
-	int i;
-	int it;
-	int count;
-	int mediane;
+	int	i;
+	int	it;
+	int	count;
+	int	mediane;
 
 	it = 1;
-	i = *len_a * (8 - (it - 1)) / 8;
-	count = *len_a - i;
-	mediane = find_it(tab_a, *len_a, it);
-	while (i--)
+	while (it <= 8 && in_order(tab_a, *len_a) == 0)
 	{
-		if (tab_a[0] >= mediane && it != 8)
-			ra(tab_a, *len_a);
-		else
-			pb(tab_a, tab_b, len_a, len_b);
+		i = *len_a * (8 - (it - 1)) / 8;
+		count = *len_a - i;
+		mediane = find_it(tab_a, *len_a, it);
+		while (i--)
+		{
+			if (tab_a[0] >= mediane && it != 8)
+				ra(tab_a, *len_a);
+			else
+				pb(tab_a, tab_b, len_a, len_b);
+		}
+		moove_a(count, tab_a, len_a);
+		weird_sort_b(tab_a, tab_b, len_a, len_b);
+		++it;
 	}
-	if (count <= *len_a / 2)
-	{
-		while (count--)
-			ra(tab_a, *len_a);
-	}
-	else
-	{
-		count = *len_a - count;
-		while (count--)
-			rra(tab_a, *len_a);
-	}
-	return(0);
 }
