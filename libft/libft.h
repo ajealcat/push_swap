@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 11:08:38 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/09/23 14:17:49 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/29 15:12:20 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <string.h>
 
-int64_t		ft_atoi(const char *str);
 int		ft_atoi_base(char *str, const char *base);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_isalpha(int c);
@@ -52,6 +51,7 @@ void	*ft_calloc(size_t count, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t dest_size);
 size_t	ft_strlen(const char *str);
+int64_t	ft_atoi(const char *str);
 
 typedef struct s_list
 {

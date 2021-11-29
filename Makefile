@@ -6,7 +6,7 @@
 #    By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/15 09:56:00 by ajearuth          #+#    #+#              #
-#    Updated: 2021/11/25 18:03:43 by ajearuth         ###   ########.fr        #
+#    Updated: 2021/11/29 14:45:52 by ajearuth         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = main.c operations.c operations_r.c operations_rr.c quicksort_utils.c \
 		quicksort.c weird_sort.c weird_sort_utils.c main_utils.c \
 		quicksort_aux.c 
 SRCSD = srcs/
-bonus = checker.c checker_utils.c get_next_line.c get_next_line_utils.c
+bonus =
 
 OBJSD = objs/
 

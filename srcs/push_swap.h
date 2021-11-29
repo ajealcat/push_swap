@@ -6,7 +6,7 @@
 /*   By: ajearuth <ajearuth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 11:27:49 by ajearuth          #+#    #+#             */
-/*   Updated: 2021/11/25 17:54:57 by ajearuth         ###   ########.fr       */
+/*   Updated: 2021/11/29 14:49:47 by ajearuth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,24 +63,5 @@ int		weird_sort_hundred_a(int *tab_a, int *tab_b, int *len_a, int *len_b);
 int		weird_sort_hundred_b(int *tab_a, int *tab_b, int *len_a, int *len_b);
 int		to_the_top(int *tab_b, int *len_b, int nb);
 int		closest(int i, int len);
-
-// BONUS //
-
-int		get_next_line(int fd, char **line);
-size_t	ft_strlen(const char *str);
-char	*ft_strndup(char *str, int n);
-int		ft_find_end(const char *str, char c);
-char	*ft_next_buffer(char *new_buffer, char *buffer);
-char	*ft_strnjoin(char *s1, char *s2, int n);
-
-typedef struct s_stack
-{
-	int *tab_a;
-	int *tab_b;
-	int *len_a;
-	int *len_b;
-}	t_stack;
-
-t_stack	init_struct(int *tab_a, int *tab_b, int *len_a, int *len_b);
 
 #endif
